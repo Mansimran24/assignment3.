@@ -1,0 +1,55 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@{
+    var items = new[]{
+        new{
+            Fitem="Burger",
+            Price="$7",
+            DeliveryDate= DateTime.Parse("2021-9-12"),
+            TotalItems= "1"
+        },
+        new{
+            Fitem="Combo Veg Meal",
+            Price="$22.88",
+            DeliveryDate= DateTime.Parse("2021-9-01"),
+            TotalItems="6"
+        },
+        new{
+            Fitem="Grilled Sandwich",
+            Price="$6.25",
+            DeliveryDate= DateTime.Parse("2021-10-11"),
+            TotalItems="2"
+        },
+        new{
+            Fitem="Chicken Nuggets",
+            Price="$12.25",
+            DeliveryDate= DateTime.Parse("2021-10-09"),
+            TotalItems="8 pieces"
+        },
+        new{
+            Fitem="Pizza",
+            Price="$8.75",
+            DeliveryDate= DateTime.Parse("2021-10-08"),
+            TotalItems="1"
+        }
+    };
+}
+@for (var i = 0; i <items.Length; i++)
+{
+    var pro =items[i];
+    <text> <strong> Food Item :@pro.Fitem  <br/> </strong>
+            Price:@pro.Price <br/>
+            Delivery Date = @pro.DeliveryDate<br/>
+            Total Items:@pro.TotalItems <br/> </text>
+}
+
+
+
